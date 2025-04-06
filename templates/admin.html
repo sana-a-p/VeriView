@@ -74,9 +74,31 @@
             margin-top: 15px;
             display: none;
         }
+        #backButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    color: #FFD700;
+    font-size: 28px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: color 0.2s ease;
+}
+
+#backButton:hover {
+    color: #e6c200;
+}
+
+
     </style>
 </head>
 <body>
+    <a href="{{ url_for('index') }}" id="backButton" title="Back to Home">←</a>
+
+
     <div class="admin-container">
         <h2>Admin Panel</h2>
 
@@ -106,6 +128,8 @@
     </div>
 
     <script>
+        
+
         document.getElementById("uploadForm").addEventListener("submit", function(event) {
             event.preventDefault();
 
