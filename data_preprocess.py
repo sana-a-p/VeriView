@@ -227,7 +227,9 @@ def train_models():
         return jsonify({'message': 'Training started successfully!'})
     except Exception as e:
         return jsonify({'error': f'Training failed: {str(e)}'}), 500
-
+@app.route('/')
+def index():
+    return render_template('index.html')  
 
 # Run Flask server
 if __name__ == '__main__':
